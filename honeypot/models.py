@@ -13,6 +13,7 @@ class IntruderAction(models.Model):
     method = models.CharField(max_length=10)
     timestamp = models.DateTimeField(auto_now_add=True)
     params = models.JSONField(blank=True, null=True)
+    headers = models.JSONField(blank=True, null=True)
 
     def __str__(self):
         return f"{self.ip_address} accessed {self.path} on {self.timestamp}"
@@ -25,8 +26,10 @@ def notify_new_intruder_action(sender, instance, created, **kwargs):
             'ip_address': instance.ip_address,
             'user_agent': instance.user_agent,
             'path': instance.path,
+            'method': instance.method,
             'timestamp': str(instance.timestamp),
             'params': instance.params,
+            'headers': instance.headers
         }
         async_to_sync(channel_layer.group_send)(
             "intruder_notifications",

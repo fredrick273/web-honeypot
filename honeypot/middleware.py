@@ -14,7 +14,7 @@ class ActionLoggingMiddleware:
         ip_address = request.META.get('REMOTE_ADDR')
         user_agent = request.META.get('HTTP_USER_AGENT', '')
 
-        # Log the action if accessing sensitive paths (like login, transfer, etc.)
+        headers = dict(request.headers)
 
         IntruderAction.objects.create(
             ip_address=ip_address,
@@ -22,6 +22,7 @@ class ActionLoggingMiddleware:
             path=request.path,
             method=request.method,
             params=request.POST if request.method == 'POST' else None,
+            headers=headers
         )
 
         return response
