@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Banking Application</title>
+    <style>
+        /* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Layout Styling */
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #0d6efd;
+    text-decoration: none;
+    padding: 8px;
+    display: block;
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.sidebar ul li a.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Top Navigation Styling */
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.topnav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.topnav a:hover {
+    text-decoration: underline;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>ABC Banking Application</h1>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#" class="active">Customer Details</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Top Navigation -->
+            <nav class="topnav">
+                <a href="#">Home</a>
+                <a href="#">Account</a>
+                <a href="#">Customer</a>
+                <a href="#">Fund Transfer</a>
+                <a href="#">Pending Approvals</a>
+                <a href="#">Loan Approvals</a>
+                <a href="#" class="active">Customer Details</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Manage Profile ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#">Profile</a>
+                        <a href="#">Log Off</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Customer Details Section -->
+            <section>
+                <h2>Customer Details</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Address</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Branch Code</th>
+                            <th>Branch Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024011902223020</td>
+                            <td>James</td>
+                            <td>Cameron</td>
+                            <td>America</td>
+                            <td>jamescameron@filmmaker.com</td>
+                            <td>3423567896</td>
+                            <td>2004</td>
+                            <td>London</td>
+                        </tr>
+                        <tr>
+                            <td>2024011909242135</td>
+                            <td>Elon</td>
+                            <td>Musk</td>
+                            <td>New York</td>
+                            <td>elonmusk@tesla.com</td>
+                            <td>4323823344</td>
+                            <td>2003</td>
+                            <td>Birmingham</td>
+                        </tr>
+                        <tr>
+                            <td>2024011912131691</td>
+                            <td>Dinesh Kumar</td>
+                            <td>M N</td>
+                            <td>Wimbledon</td>
+                            <td>dineshkumar@gmail.com</td>
+                            <td>1234565432</td>
+                            <td>2004</td>
+                            <td>London</td>
+                        </tr>
+                        <tr>
+                            <td>2024022308382954</td>
+                            <td>Brahma</td>
+                            <td>Nanda</td>
+                            <td>Bangalore</td>
+                            <td>brahmananda@gmail.com</td>
+                            <td>435345345345</td>
+                            <td>2002</td>
+                            <td>Leeds</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

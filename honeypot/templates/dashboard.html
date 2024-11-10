@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Banking Application</title>
+    <style>
+        /* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: left;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+}
+
+.customer-info {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.customer-info p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    padding: 20px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8em;
+    background-color: #f5f5f5;
+    color: gray;
+}
+
+footer strong {
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>ABC Banking Application</h1>
+    </header>
+
+    <!-- Customer Info Section -->
+    <section class="customer-info">
+        <p>Customer ID: 2024011909242135</p>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">Accounts</a>
+            <a href="#">Recent Transaction</a>
+            <a href="#">Fund Transfer</a>
+            <a href="#">Manage Profile</a>
+            <div class="dropdown">
+                <button class="dropbtn">Elon</button>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <!-- Welcome Message -->
+    <main>
+        <h2>Hello Elon,</h2>
+        <p>Hope you are enjoying Banking with us.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Created By <strong>K2343849</strong> Kingston ID</p>
+    </footer>
+</body>
+</html>
