@@ -182,16 +182,16 @@ th {
         <main class="content">
             <!-- Top Navigation -->
             <nav class="topnav">
-                <a href="#">Home</a>
-                <a href="#">Accounts</a>
-                <a href="#">Recent Transaction</a>
-                <a href="#">Fund Transfer</a>
-                <a href="#">Manage Profile</a>
+                <a href="{% url 'dashboard' %}">Home</a>
+                <a href="accounts.html">Accounts</a>
+                <a href="{% url 'history' %}">Recent Transaction</a>
+                <a href="{% url 'transfer' %}">Fund Transfer</a>
+                <a href="{% url 'profile' %}">Manage Profile</a>
                 <div class="dropdown">
                     <button class="dropbtn">Elon ▼</button>
                     <div class="dropdown-content">
                         <a href="#">Profile</a>
-                        <a href="#">Log Off</a>
+                        <a href="{% url 'login' %}">Logout</a>
                     </div>
                 </div>
             </nav>

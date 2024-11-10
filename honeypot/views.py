@@ -18,3 +18,13 @@ def detail(request):
 
 def history(request):
     return render(request, 'history.html')
+
+def transfer(request):
+    if request.method == 'POST':
+        return redirect('history')
+    return render(request, 'transfer.html')
+
+def profile(request):
+    if request.method == 'POST':
+        return redirect('dashboard')
+    return render(request, 'profile.html')

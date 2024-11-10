@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Banking Application - Manage Profile</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Layout Styling */
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Top Navigation Styling */
+        .topnav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        .topnav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .topnav a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 100px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 8px 12px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .form-section {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0044cc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>ABC Banking Application - Manage Profile</h1>
+    </header>
+
+    <!-- Top Navigation -->
+    <nav class="topnav">
+        <a href="{% url 'dashboard' %}">Home</a>
+        <a href="accounts.html">Accounts</a>
+        <a href="{% url 'history' %}">Recent Transaction</a>
+        <a href="{% url 'transfer' %}">Fund Transfer</a>
+        <a href="{% url 'profile' %}">Manage Profile</a>
+        <div class="dropdown">
+            <button class="dropbtn">Elon ▼</button>
+            <div class="dropdown-content">
+                <a href="#">Profile</a>
+                <<a href="{% url 'login' %}">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Accounts</a></li>
+                <li><a href="#">Recent Transaction</a></li>
+                <li><a href="#">Fund Transfer</a></li>
+                <li><a href="#">Manage Profile</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <h2>Profile Information</h2>
+            <!-- Display Profile Information -->
+            <p><strong>Name:</strong> Elon</p>
+            <p><strong>Email:</strong> elon@example.com</p>
+            <p><strong>Phone:</strong> +123-456-7890</p>
+            <p><strong>Address:</strong> 123 SpaceX Drive, Mars City</p>
+
+            <!-- Change Email Section -->
+            <div class="form-section">
+                <h3>Change Email</h3>
+                <form action="{% url 'profile' %}" method="POST">
+                    {% csrf_token %}
+                    <label for="current-password">Current Password</label>
+                    <input type="password" id="current-password" name="current-password" required>
+
+                    <label for="new-email">New Email</label>
+                    <input type="email" id="new-email" name="new-email" required>
+
+                    <button type="submit">Change Email</button>
+                </form>
+            </div>
+
+            <!-- Reset Password Section -->
+            <div class="form-section">
+                <h3>Reset Password</h3>
+                <form action="{% url 'profile' %}" method="POST">
+                    {% csrf_token %}
+                    <label for="old-password">Old Password</label>
+                    <input type="password" id="old-password" name="old-password" required>
+
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" name="new-password" required>
+
+                    <label for="confirm-password">Confirm New Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+
+                    <button type="submit">Reset Password</button>
+                </form>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>
